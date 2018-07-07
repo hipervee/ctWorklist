@@ -3,8 +3,9 @@ export class Study {
     first: string;
     last: string;
     handle: string;
+    score: number;
 
     constructor() {
-        
+
     }
 }
