@@ -11,12 +11,15 @@ import { ToastrService } from 'ngx-toastr';
 export class GridComponent implements OnInit {
   studiesPromise: Promise<Study[]>;
   studies: Study[] = [];
+  isLoading = false;
   constructor(private prioritySvc: PriorityService, private toaster: ToastrService) {
   }
 
   ngOnInit() {
+    this.loading();
     this.prioritySvc.getStudies().subscribe(response => {
       this.studies = response;
+      this.notLoading();
     });;
   }
 
@@ -25,8 +28,9 @@ export class GridComponent implements OnInit {
     this.studiesPromise.then(response => {
       this.studies = response;
       this.toaster.success('Studies Prioritized Successfully');
-    });
-
-    
+    });  
   }
+
+  loading = () => this.isLoading = true;
+  notLoading = () => this.isLoading = false;
 }

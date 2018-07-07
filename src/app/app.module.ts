@@ -11,6 +11,7 @@ import { Angular2PromiseButtonModule } from 'angular2-promise-buttons/dist';
 import { PriorityService } from './services/priority.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { LoaderComponent } from './widgets/loader/loader.component';
 const asynButtonConfig = {
   // your custom config goes here
   spinnerTpl: '<span class="btn-spinner"></span>',
@@ -27,7 +28,8 @@ const asynButtonConfig = {
     AppComponent,
     LoginComponent,
     GridComponent,
-    NavComponent
+    NavComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,

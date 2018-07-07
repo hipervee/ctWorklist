@@ -1,34 +1,35 @@
-<div class="row">
+<app-loader [hidden]="!isLoading">
+</app-loader>
+<div class="row" [hidden]="isLoading">
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-12">
-          <div class="card text-white bg-dark mb-3">
-              <div class="card-header">
-                <h4 class="pull-left">Studies</h4>
-                <button (click)="runAlgorithm()" 
-                [promiseBtn]="studiesPromise" type="button" class="btn btn-primary pull-right">Run Algorithm</button>
-              </div>
-              <div class="card-body">
-                  <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let item of studies">
-                          <th scope="row">{{item.id}}</th>
-                          <td>{{item.first}}</td>
-                          <td>{{item.last}}</td>
-                          <td>{{item.handle}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-              </div>
-            </div>
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-header">
+            <h4 class="pull-left">Studies</h4>
+            <button (click)="runAlgorithm()" [promiseBtn]="studiesPromise" type="button" class="btn btn-primary pull-right">Run Algorithm</button>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of studies">
+                  <th scope="row">{{item.id}}</th>
+                  <td>{{item.first}}</td>
+                  <td>{{item.last}}</td>
+                  <td>{{item.handle}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
