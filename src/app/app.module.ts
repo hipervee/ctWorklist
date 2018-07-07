@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -34,7 +35,8 @@ const asynButtonConfig = {
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     Angular2PromiseButtonModule.forRoot(asynButtonConfig),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({

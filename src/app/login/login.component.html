@@ -1,13 +1,11 @@
 <div class="row">
   <div class="col-md-12">
     <div class="row my-login">
-      <div class="col-md-8">
-      </div>
-      <div class="col-md-4">
-        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+      <div class="col-md-4 offset-md-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
           <div class="card-header">Sign In</div>
           <div class="card-body">
-            <form action="/examples/actions/confirmation.php" method="post">
+            <form id="loginForm" (ngSubmit)="login()" #loginForm>
               <div class="form-group">
                 <div class="input-group">
                   <input type="text" class="form-control" name="username" placeholder="Username" required="required">
@@ -22,36 +20,8 @@
                 <button type="submit" class="btn btn-primary btn-block btn-lg text-center">Sign In</button>
               </div>
             </form>
-
           </div>
         </div>
-        <!--
-        <div class="modal-dialog modal-login">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Sign In</h4>
-            </div>
-            <div class="modal-body">
-              <form action="/examples/actions/confirmation.php" method="post">
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-       -->
       </div>
     </div>
   </div>
