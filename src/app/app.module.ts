@@ -11,19 +11,26 @@ import { NavComponent } from './nav/nav.component';
 import { Angular2PromiseButtonModule } from 'angular2-promise-buttons/dist';
 import { PriorityService } from './services/priority.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, GlobalConfig } from 'ngx-toastr';
 import { LoaderComponent } from './widgets/loader/loader.component';
+
 const asynButtonConfig = {
-  // your custom config goes here
   spinnerTpl: '<span class="btn-spinner"></span>',
-  // disable buttons when promise is pending
   disableBtn: true,
-  // the class used to indicate a pending promise
   btnLoadingClass: 'is-loading',
-  // only disable and show is-loading class for clicked button, 
-  // even when they share the same promise
   handleCurrentBtnOnly: false,
 };
+
+const toastConfig: Partial<GlobalConfig> = {
+  timeOut: 3000,
+  positionClass: 'toast-top-center',
+  preventDuplicates: true,
+  tapToDismiss: true,
+  closeButton: true,
+  progressAnimation: 'decreasing',
+  progressBar: true
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,14 +43,10 @@ const asynButtonConfig = {
     CommonModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, {useHash: true}),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     Angular2PromiseButtonModule.forRoot(asynButtonConfig),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 3000,
-      positionClass: 'toast-top-center',
-      preventDuplicates: true,
-    }),
+    ToastrModule.forRoot(toastConfig),
   ],
   providers: [PriorityService],
   bootstrap: [AppComponent]
