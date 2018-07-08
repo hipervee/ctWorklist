@@ -41,7 +41,7 @@ const asynButtonConfig = {
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 3000,
-      positionClass: 'toast-bottom-right',
+      positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
   ],
