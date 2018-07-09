@@ -13,6 +13,7 @@ import { PriorityService } from './services/priority.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, GlobalConfig } from 'ngx-toastr';
 import { LoaderComponent } from './widgets/loader/loader.component';
+import { BoldDirective } from './directives/bold.directive';
 
 const asynButtonConfig = {
   spinnerTpl: '<span class="btn-spinner"></span>',
@@ -37,7 +38,8 @@ const toastConfig: Partial<GlobalConfig> = {
     LoginComponent,
     GridComponent,
     NavComponent,
-    LoaderComponent
+    LoaderComponent,
+    BoldDirective
   ],
   imports: [
     CommonModule,
