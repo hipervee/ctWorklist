@@ -1,9 +1,13 @@
 export class Study {
-    id: number;
-    first: string;
-    last: string;
-    handle: string;
-    score: number;
+    patientId: string;
+    patientName: string;
+    gender: string;
+    dob: string;
+    modality: string;
+    procedureDescription: string;
+    procedureDateTime: string;
+    accessionNumber: string;
+    studyPriority: string;
 
     constructor() {
 
