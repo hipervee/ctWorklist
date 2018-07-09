@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, GlobalConfig } from 'ngx-toastr';
 import { LoaderComponent } from './widgets/loader/loader.component';
 import { BoldDirective } from './directives/bold.directive';
+import { AgGridModule } from 'ag-grid-angular';
+import { AggridComponent } from './components/aggrid/aggrid.component';
 
 const asynButtonConfig = {
   spinnerTpl: '<span class="btn-spinner"></span>',
@@ -39,7 +41,8 @@ const toastConfig: Partial<GlobalConfig> = {
     GridComponent,
     NavComponent,
     LoaderComponent,
-    BoldDirective
+    BoldDirective,
+    AggridComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +52,7 @@ const toastConfig: Partial<GlobalConfig> = {
     Angular2PromiseButtonModule.forRoot(asynButtonConfig),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(toastConfig),
+    AgGridModule.withComponents([])
   ],
   providers: [PriorityService],
   bootstrap: [AppComponent]
