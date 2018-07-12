@@ -12,15 +12,17 @@ export class GridComponent implements OnInit {
   studiesPromise: Promise<Study[]>;
   studies: Study[] = [];
   isLoading = false;
-  constructor(private prioritySvc: PriorityService, private toaster: ToastrService) {
-  }
+  constructor(
+    private prioritySvc: PriorityService,
+    private toaster: ToastrService
+  ) {}
 
   ngOnInit() {
     this.loading();
     this.prioritySvc.getStudies().subscribe(response => {
       this.studies = response;
       this.notLoading();
-    });;
+    });
   }
 
   runAlgorithm() {
@@ -28,9 +30,9 @@ export class GridComponent implements OnInit {
     this.studiesPromise.then(response => {
       this.studies = response;
       this.toaster.success('Studies Prioritized Successfully');
-    });  
+    });
   }
 
-  loading = () => this.isLoading = true;
-  notLoading = () => this.isLoading = false;
+  loading = () => (this.isLoading = true);
+  notLoading = () => (this.isLoading = false);
 }

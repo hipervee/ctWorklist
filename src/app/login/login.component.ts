@@ -7,14 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login() {
-    console.log("Came jhere");
+    console.log('Came jhere');
     this.router.navigate(['/grid']);
   }
 }
